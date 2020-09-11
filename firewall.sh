@@ -51,7 +51,7 @@ sudo iptables -t nat -A POSTROUTING -s 10.0.0.0/24 -o enp0s3 -j MASQUERADE
 #Definir política de DROP 
 sudo iptables -t filter -P FORWARD DROP
 
-#permitir respostas das conexões estabelecidas oriundas das regras de permitir tráfego
+#Permitir respostas das conexões de tráfego liberado
 sudo iptables -A FORWARD -m state --state ESTABLISHED,RELATED -j ACCEPT
 
 #Liberar trafego
@@ -68,7 +68,7 @@ sudo iptables -A FORWARD -p tcp --dport 21 -j ACCEPT
 #Definir política de DROP
 sudo iptables -t filter -P INPUT DROP
 
-#permitir respostas das conexões estabelecidas oriundas das regras de permitir tráfego
+#Permitir respostas das conexões de tráfego liberado
 sudo iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
 
 #Liberar SSH
