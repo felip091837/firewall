@@ -39,6 +39,8 @@ INTERFACESv4="enp0s8"
 INTERFACESv6=""
 EOT
 
+sudo service isc-dhcp-server start
+
 
 #configurar roteamento
 sudo bash -c 'echo "1" > /proc/sys/net/ipv4/ip_forward'
